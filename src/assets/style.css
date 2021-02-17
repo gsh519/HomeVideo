@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+  font-size: 30px;
+  color: #deb887;
+}
+
+.btn {
+  color: #fff !important;
+  padding: 10px 16px !important;
+}
+
+.cl-wit {
+  color: #fff !important;
+}
+
+.btn-dialog {
+  color: #fff !important;
+  background-color: #4dd0e1 !important;
+}
+
+.btn-dialog:hover {
+  opacity: 0.8;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
