@@ -4,6 +4,7 @@ import {push} from 'connected-react-router'
 export const setRoom = (roomName, password) => {
   return async (dispatch) => {
     if (roomName === "" || password === "") {
+      alert('必須項目が未入力です。')
       return false
     }
     const timestamp = FirebaseTimeStamp.now();
@@ -32,6 +33,7 @@ export const enterRoom = (roomId, password) => {
   return async (dispatch) => {
     //validation
     if (roomId === "" || password === "") {
+      alert('必須項目が未入力です。')
       return false
     }
 
