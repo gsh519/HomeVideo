@@ -16,7 +16,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Divider from '@material-ui/core/Divider'
 import {useSelector} from 'react-redux'
-import {getIsSignedIn, getUserName, getUserId} from '../../reducks/users/selectors'
+import {getIsSignedIn, getUserName, getUserId, getUserEmail} from '../../reducks/users/selectors'
 import {push} from 'connected-react-router'
 
 const useStyles = makeStyles((theme) => ({
@@ -87,6 +87,7 @@ const HeadBar = () => {
   const selector = useSelector(state => state);
   const isSignedIn = getIsSignedIn(selector);
   const uid = getUserId(selector);
+  const email = getUserEmail(selector)
   const username = getUserName(selector);
 
   const [open, setOpen] = useState(false)
@@ -120,7 +121,7 @@ const HeadBar = () => {
               </Typography>
               <Divider/>
               <Typography gutterBottom className={classes.mb}>
-                メールアドレス：000
+                メールアドレス：{email}
               </Typography>
               <Divider/>
               <Typography gutterBottom className={classes.mb}>

@@ -16,3 +16,8 @@ export const getIsSignedIn = createSelector(
   [usersSelector],
   state => state.isSignedIn
 )
+
+export const getUserEmail = createSelector(
+  [usersSelector],
+  state => state.email
+)

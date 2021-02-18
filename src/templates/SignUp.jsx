@@ -31,14 +31,14 @@ const SignUp = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const [name, setName] = useState(''),
+  const [username, setUserName] = useState(''),
         [email, setEmail] = useState(''),
         [password, setPassword] = useState(''),
         [confirmPassword, setConfirmPassword] = useState('');
 
-  const inputName = useCallback((event) => {
-    setName(event.target.value)
-  }, [setName])
+  const inputUserName = useCallback((event) => {
+    setUserName(event.target.value)
+  }, [setUserName])
 
   const inputEmail = useCallback((event) => {
     setEmail(event.target.value)
@@ -65,8 +65,8 @@ const SignUp = () => {
             required={true}
             rows={1}
             variant="outlined"
-            value={name}
-            onChange={inputName}
+            value={username}
+            onChange={inputUserName}
           />
 
           <TextInput
@@ -106,7 +106,7 @@ const SignUp = () => {
           />
         </CardContent>
       </Card>
-      <Button variant="contained" color='primary' className='btn' onClick={() => dispatch(signUp(name, email, password, confirmPassword))}>登録</Button>
+      <Button variant="contained" color='primary' className='btn' onClick={() => dispatch(signUp(username, email, password, confirmPassword))}>登録</Button>
       <p className={classes.login} onClick={() => dispatch(push('/login'))}>＊アカウントをお持ちのかたはこちら</p>
     </div>
   )

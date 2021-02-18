@@ -5,8 +5,9 @@ export const loginAction = (userState) => {
     payload: {
       isSignedIn: true,
       role: userState.role,
-      id: userState.id,
-      username: userState.username
+      uid: userState.uid,
+      username: userState.username,
+      email: userState.email,
     }
   }
 }

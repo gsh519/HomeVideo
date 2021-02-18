@@ -2,9 +2,9 @@ import React,{useState, useEffect} from 'react'
 import {useSelector} from 'react-redux'
 import { db } from '../firebase';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import {Video} from '../components/Youtube/'
+import {ChatArea} from '../components/Chat'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,7 +44,7 @@ const Room = () => {
               <Video />
             </Grid>
             <Grid item xs={12} sm={5}>
-              <Paper className={classes.paper}>xs=12 sm=5</Paper>
+              <ChatArea />
             </Grid>
           </Grid>
         </div>

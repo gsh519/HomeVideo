@@ -16,7 +16,8 @@ export const listenAuthState = () => {
               isSignedIn: true,
               role: data.role,
               uid: data.uid,
-              name: data.name
+              username: data.username,
+              email: data.email
             }))
             dispatch(push('/'))
           })
@@ -50,7 +51,8 @@ export const login = (email, password) => {
                   isSignedIn: true,
                   role: data.role,
                   uid: data.uid,
-                  name: data.name
+                  username: data.username,
+                  email: data.email,
                 }))
                 dispatch(push('/'))
               })
@@ -59,10 +61,10 @@ export const login = (email, password) => {
   }
 }
 
-export const signUp = (name, email, password, confirmPassword) => {
+export const signUp = (username, email, password, confirmPassword) => {
   return async (dispatch) => {
     //validation
-    if (name === "" || email === "" || password === "" || confirmPassword === "") {
+    if (username === "" || email === "" || password === "" || confirmPassword === "") {
       alert('必須項目が未入力です')
       return false
     }
@@ -86,7 +88,7 @@ export const signUp = (name, email, password, confirmPassword) => {
                     email: email,
                     uid: uid,
                     updated_at: timestamp,
-                    name: name
+                    username: username,
                   }
 
                   db.collection('users').doc(uid).set(userInitialData)
